@@ -1,1 +1,5 @@
-docks/pcaps/
+docs/pcaps/
+
+bin/
+obj/
+*.lscache
