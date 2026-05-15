@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazerMixerBridge", "src\RazerMixerBridge.csproj", "{11840BB0-BFBE-49CE-A744-0CC34309A860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11840BB0-BFBE-49CE-A744-0CC34309A860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11840BB0-BFBE-49CE-A744-0CC34309A860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11840BB0-BFBE-49CE-A744-0CC34309A860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11840BB0-BFBE-49CE-A744-0CC34309A860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2C056E-FD9E-40AB-B586-3F61F5B9C885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2C056E-FD9E-40AB-B586-3F61F5B9C885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2C056E-FD9E-40AB-B586-3F61F5B9C885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2C056E-FD9E-40AB-B586-3F61F5B9C885}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
