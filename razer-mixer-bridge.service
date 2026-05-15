@@ -1,0 +1,18 @@
+[Unit]
+Description=Razer Audio Mixer Bridge
+# Wait for the user's graphical session and audio subsystem to be ready.
+After=graphical-session.target sound.target
+
+[Service]
+Type=notify
+ExecStart=%h/.local/bin/razer-mixer-bridge %h/.config/razer-mixer-bridge/config.toml
+Restart=on-failure
+RestartSec=3
+
+# PulseAudio / PipeWire socket lives in the user runtime directory.
+Environment=HOME=%h
+Environment=XDG_RUNTIME_DIR=/run/user/%U
+Environment=PULSE_RUNTIME_PATH=/run/user/%U/pulse
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,23 @@
+# Razer Audio Mixer Bridge, example configuration
+# Copy to ~/.config/razer-mixer-bridge/config.toml and edit.
+
+[audio]
+# Where the Razer mixer's audio goes after it passes through the hardware.
+# Leave unset to auto-detect: uses the PA default at plug-in time
+# (excluding the fader sinks and the Razer hardware sink itself).
+#
+# output_sink = "alsa_output.pci-0000_00_1f.3.analog-stereo"
+
+# Description shown in pavucontrol for the 4 virtual fader sinks.
+# {n} is replaced with the channel number (1-4). No spaces allowed.
+sink_description_template = "Razer-Ch-{n}"
+
+# Per-application overrides for the stream-rehoming step that runs on plug-in.
+# Key: the sink-input's application.name (case-insensitive, exact match).
+# Value: target sink name, or "stay" to leave the stream on its current sink.
+# Apps not listed here land on razer_fader4 (the new default sink).
+#
+# [audio.routing]
+# "OBS Studio" = "stay"
+# "Firefox"    = "razer_fader1"
+# "Discord"    = "razer_fader2"
