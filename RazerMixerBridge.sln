@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazerMixerBridge", "src\RazerMixerBridge.csproj", "{11840BB0-BFBE-49CE-A744-0CC34309A860}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazerMixerBridge.Tests", "tests\RazerMixerBridge.Tests.csproj", "{CC2C056E-FD9E-40AB-B586-3F61F5B9C885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
