@@ -11,15 +11,18 @@ public sealed class RazerHidDevice : IDisposable
     private readonly HidStream _stream;
     private readonly ILogger<RazerHidDevice> _log;
 
+    // HidSharp's DevicePath on Linux is the sysfs node (e.g. /sys/devices/.../hidraw4), not the /dev/hidrawN chardev path our locator returns, so we match on VID/PID
+    private const int RazerVid = 0x1532;
+    private const int MixerPid = 0x053e;
+
     public RazerHidDevice(string hidrawPath, ILogger<RazerHidDevice> log)
     {
         _log = log;
-        var deviceList = DeviceList.Local;
 
-        // HidSharp identifies Linux hidraw devices by path.
-        var device = deviceList.GetHidDevices()
-            .FirstOrDefault(d => d.DevicePath == hidrawPath)
-            ?? throw new InvalidOperationException($"HID device not found: {hidrawPath}");
+        var device = DeviceList.Local.GetHidDevices()
+            .FirstOrDefault(d => d.VendorID == RazerVid && d.ProductID == MixerPid)
+            ?? throw new InvalidOperationException(
+                $"Razer Audio Mixer not visible to HidSharp (sysfs node: {hidrawPath})");
 
         var openConfig = new OpenConfiguration();
         openConfig.SetOption(OpenOption.Interruptible, true);
